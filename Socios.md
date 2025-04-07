@@ -109,9 +109,9 @@ Permite actualizar los datos personales de un socio usando su `codsoc`.
 }
 ```
 
-**Ejemplo de respuesta 400**    
+**Ejemplo de respuesta 422**    
 ```json{
-    "status": 400,
+    "status": 422,
     "message": "Error al actualizar los datos",
     "errors": [
         {
@@ -236,10 +236,10 @@ Content-Type: application/json
 }
 ```
 
-### Ejemplo de Respuesta con Error (400):
+### Ejemplo de Respuesta con Error (422):
 ```json
 {
-    "status": 400,
+    "status": 422,
     "message": "Error al actualizar los datos",
     "errors": [
         {
