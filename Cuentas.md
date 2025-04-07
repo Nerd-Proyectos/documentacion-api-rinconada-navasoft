@@ -33,7 +33,39 @@ GET /cuentas/tipos-comprobantes
 ```
 ---
 
-## 📥 1. Obtener conceptos de comprobantes
+## 📥 2. Obtener categorias de pagos
+
+**Método:** `GET`  
+**Ruta:** `/cuentas/categorias-pagos`
+
+**Descripción:**  
+Obtener lista de categorias de pagos
+
+**Ejemplo de llamada:**
+```
+GET /cuentas/categorias-pagos
+```
+
+### 🔸 Respuesta JSON:
+```json
+[
+  {
+    "cod": "01",
+    "descripcion": "PAGADO",
+  },
+  {
+    "cod": "02",
+    "descripcion": "VIGENTE",
+  },
+  {
+    "cod": "03",
+    "descripcion": "VENCIDO",
+  },
+]
+```
+---
+
+## 📥 3. Obtener conceptos de comprobantes
 
 **Método:** `GET`  
 **Ruta:** `/cuentas/coceptos-comprobantes`
@@ -58,12 +90,14 @@ GET /cuentas/coceptos-comprobantes
 ```
 ---
 
-## 📥 2. Obtener cuenta del socio 
+## 📥 4. Obtener estado cuenta del socio 
 
 **Método:** `GET`  
 **Ruta:** `/cuentas/{codsoc}`
 
 **Descripción:**  
+- Obtener pago que el socio ha realizado en Navasoft, con sus concepto, numero de comprobantes, etc.
+Estos datos deben venir de los mas nuevos a los mas antiguos
 
 ### 🔹 Parámetros:
 
@@ -81,7 +115,7 @@ GET /cuentas/0001?codigo=58,59&limit=200
 ```json
 [
   {
-    "codigo" : "0001", 
+    "codigo" : "0001", // codigo interno de navasoft esto para no insertar datos repetidos
     "estado": "PAGADO",
     "codconcepto": "59",
     "desconcepto": "Cuota de Mantenimiento",
@@ -123,13 +157,13 @@ GET /cuentas/0001?codigo=58,59&limit=200
 ```
 ---
 
-## 📥 3. Guardar pago realizado desde rinconada  a Navasoft (Como por ejemplo en las reserva de parrilla)
+## 📥 5. Guardar pago realizado desde rinconada  a Navasoft (Como por ejemplo en las reserva de parrilla)
 
 **Método:** `POST`  
 **Ruta:** `/cuentas/guardar-pago`
 
 **Descripción:**  
-Endpoint que se debe utlizar para 
+Endpoint que se debe utlizar para guadar pagos en navasoft desde sistema web de rinconada. Navasoft se encargaria de factura y retornar los datos del comprobante generado para actualizar de vuelta estos datos en el sitema de Rinconada.
 
 ### Datos que enviaremos
 

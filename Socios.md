@@ -188,19 +188,19 @@ Actualiza la información de un **familiar** en Navasoft usando el **código del
 | `codfam`           | Código del familiar (no se actualiza)                        |
 | `apellido_paterno` | Apellido paterno del familiar                                |
 | `apellido_materno` | Apellido materno del familiar                                |
-| `nombres`          | Nombres del familiar                                          |
-| `tipo_doc`         | Tipo de documento                                             |
-| `nro_doc`          | Número de documento                                           |
-| `nacionalidad`     | Nacionalidad                                                  |
-| `lugar_nacimiento` | Lugar de nacimiento                                           |
-| `edo_civil`        | Estado civil                                                  |
-| `sexo`             | Sexo (M/F)                                                    |
+| `nombres`          | Nombres del familiar                                         |
+| `tipo_doc`         | Tipo de documento                                            |
+| `nro_doc`          | Número de documento                                          |
+| `nacionalidad`     | Nacionalidad                                                 |
+| `lugar_nacimiento` | Lugar de nacimiento                                          |
+| `edo_civil`        | Estado civil                                                 |
+| `sexo`             | Sexo (M/F)                                                   |
 | `fecha_nacimiento` | Fecha de nacimiento (formato `YYYY-MM-DD`)                   |
-| `direccion`        | Dirección del familiar                                        |
-| `tel_fijo`         | Teléfono fijo                                                 |
-| `tel_cel`          | Teléfono celular                                              |
-| `email`            | Correo electrónico                                            |
-| `foto`             | Foto (opcional)                                               |
+| `direccion`        | Dirección del familiar                                       |
+| `tel_fijo`         | Teléfono fijo                                                |
+| `tel_cel`          | Teléfono celular                                             |
+| `email`            | Correo electrónico                                           |
+| `foto`             | Foto (opcional)                                              |
 
 ### Ejemplo de Request:
 ```http
