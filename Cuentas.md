@@ -37,7 +37,7 @@ GET /cuentas/tipos-comprobantes
 ```
 ---
 
-## 📥 2. Obtener categorias de pagos
+## 📥 2. Obtener categorias (estados) de pagos
 
 **Método:** `GET`  
 **Ruta:** `/cuentas/categorias-pagos`
@@ -108,12 +108,12 @@ Obtener el historial de pagos realizados por el socio en Navasoft, incluyendo co
 |-----------|---------|-----------|-----------------------------------------------------------------|
 | codigo    | string  | Opcional  | Lista de códigos de tipo de comprobantes separados por comas `,`|
 | limit     | integer | Opcional  | Límite máximo de registros a devolver                           |
+| desde     | date    | Opcional  | Parametro para filtrar desde la fecha  indicada                 |
 
 **Ejemplo de llamada:**
 ```
-GET /cuentas/0001?codigo=58,59&limit=200
+GET /cuentas/0001?codigo=58,59&limit=200&desde=2025-01-01&hasta=2025-01-31
 ```
-
 ### 🔸 Respuesta JSON:
 ```json
 [
@@ -160,13 +160,14 @@ GET /cuentas/0001?codigo=58,59&limit=200
 ```
 ---
 
-## 📥 5. Guardar pago realizado desde rinconada  a Navasoft (Como por ejemplo en las reserva de parrilla)
+## 📥 5. Guardar pago realizado desde rinconada a Navasoft
 
 **Método:** `POST`  
 **Ruta:** `/cuentas/guardar-pago`
 
 **Descripción:**  
-Endpoint que se debe utlizar para guadar pagos en navasoft desde sistema web de rinconada. Navasoft se encargaria de factura y retornar los datos del comprobante generado para actualizar de vuelta estos datos en el sitema de Rinconada.
+Este endpoint permite registrar pagos realizados desde el sistema web de Rinconada en Navasoft. Por ejemplo para reservas de parrillas, pago de invitados etc.
+Navasoft se encargará de generar el comprobante correspondiente y devolverá los datos del comprobante generado, los cuales podrán ser utilizados para actualizar la información en el sistema de Rinconada.
 
 ### Datos que enviaremos
 
@@ -174,7 +175,7 @@ Endpoint que se debe utlizar para guadar pagos en navasoft desde sistema web de 
 |--------------------|--------------------------------------------------------------|
 | `codsoc`           | Código del socio titular                                     |
 | `codconcepto`      | Código de concepto del pago                                  |
-| `desconcepto`      | Apellido paterno del familiar                                |
+| `desconcepto`      | Descripcion del concepto de pago                             |
 | `fecha_pago`       | Fecha de pago (formato `YYYY-MM-DD`)                         |
 | `modena`           | Moneda de pago S/ o $                                        |
 | `importe`          | Importe de pago                                              |
@@ -182,6 +183,18 @@ Endpoint que se debe utlizar para guadar pagos en navasoft desde sistema web de 
 **Ejemplo de llamada:**
 ```
 GET /cuentas/guardar-pago
+```
+
+### Ejemplo de datos a enviar:
+```json
+{
+  "codsoc": "12345",
+  "codconcepto": "02",
+  "desconcepto": "Reserva de Parrilla",
+  "fecha_pago": "2025-04-08",
+  "modena": "S/",
+  "importe": 150.00
+}
 ```
 
 ### Ejemplo de Respuesta Exitosa (200):
