@@ -12,7 +12,7 @@ Obtiene la lista de categorias de invitados
 
 **Ejemplo de llamada:**
 ```
-GET /parrillas/listas
+GET /invitados/categorias
 ```
 
 ### 🔸 Respuesta JSON:
