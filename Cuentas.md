@@ -29,6 +29,10 @@ GET /cuentas/tipos-comprobantes
     "cod": "03",
     "descripcion": "Anticipo",
   },
+    {
+    "cod": "04",
+    "descripcion": "Recibo",
+  },
 ]
 ```
 ---
@@ -187,8 +191,8 @@ GET /cuentas/guardar-pago
     "message": "Pago registrado exitosamente",
     "data": {
         "codigo" : "0001", //Codigo de pago generado en navasoft
-        "cod_tipo_comprobantre": "02",
-        "tipo_comprobantre": "Factura",
+        "cod_tipo_comprobantre": "04",
+        "tipo_comprobantre": "Recibo",
         "num_comprobante": "SB01-0001000-2025"
     }
 }
