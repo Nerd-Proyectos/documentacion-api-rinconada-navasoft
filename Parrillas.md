@@ -58,7 +58,7 @@ GET /parrillas/listas
   {
     "cod": "02",
     "lugar": "Los Paltos",
-    "descripcion": "Parrilla 02",\
+    "descripcion": "Parrilla 02",
     "aforo": 15,
   },
   {
