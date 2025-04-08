@@ -53,16 +53,19 @@ GET /parrillas/listas
     "cod": "01",
     "lugar": "Los Paltos",
     "descripcion": "Parrilla 01",
+    "aforo": 20,
   },
   {
     "cod": "02",
     "lugar": "Los Paltos",
-    "descripcion": "Parrilla 02",
+    "descripcion": "Parrilla 02",\
+    "aforo": 15,
   },
   {
     "cod": "03",
     "lugar": "Los Paltos",
     "descripcion": "Parrilla 03",
+    "aforo": 25,
   },
 ]
 ```
