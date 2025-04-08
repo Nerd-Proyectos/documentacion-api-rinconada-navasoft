@@ -96,8 +96,7 @@ GET /cuentas/coceptos-comprobantes
 **Ruta:** `/cuentas/{codsoc}`
 
 **Descripción:**  
-- Obtener pago que el socio ha realizado en Navasoft, con sus concepto, numero de comprobantes, etc.
-Estos datos deben venir de los mas nuevos a los mas antiguos
+Obtener el historial de pagos realizados por el socio en Navasoft, incluyendo conceptos, números de comprobantes, entre otros. Los datos se deben ordenar desde los más recientes hasta los más antiguos.
 
 ### 🔹 Parámetros:
 
@@ -199,6 +198,6 @@ GET /cuentas/guardar-pago
 ```json
 {
     "status": 422,
-    "message": "Error al registrar los pagos"
+    "message": "Error al registrar el pago"
 }
 ```

@@ -68,13 +68,13 @@ GET /parrillas/listas
 ```
 ---
 
-## 📥 2. Guardar reserva de parrilla realizada en rinconada hacia navasoft
+## 📥 2. Guardar reserva de parrilla realizada en rinconada web hacia navasoft
 
 **Método:** `POST`  
 **Ruta:** `/parrillas/reservar`
 
 **Descripción:**  
-Este endpoint se utilizar para guardar reservas de parrillas que se han realizado en la web de rinconada hacia navasoft
+Este endpoint se utiliza para guardar reservas de parrillas que se han realizado en la web de Rinconada hacia Navasoft.
 
 ### Datos que enviaremos
 
@@ -86,7 +86,7 @@ Este endpoint se utilizar para guardar reservas de parrillas que se han realizad
 
 **Ejemplo de llamada:**
 ```
-GET /cuentas/guardar-pago
+POST /parrillas/reservar
 ```
 
 ### Ejemplo de Respuesta Exitosa (200):
@@ -112,10 +112,9 @@ GET /cuentas/guardar-pago
 ## 📥 3. Agregar invitados a reserva
 
 **Método:** `POST`  
-**Ruta:** `/parrillas/reservar/codigo_reserva/invitados`
+**Ruta:** `/parrillas/reserva/{codigo_reserva}/invitados`
 
-**Descripción:**  
-Este endpoint se utiliza para agregar los invitados a la reserva de parrilla creada anteriormente
+Este endpoint se utiliza para agregar los invitados a la reserva de parrilla creada anteriormente.
 
 ### Datos que enviaremos
 
@@ -123,7 +122,7 @@ Este endpoint se utiliza para agregar los invitados a la reserva de parrilla cre
 |--------------------|--------------------------------------------------------------|
 | `codsoc`           | Código del socio que hace reserva                            |
 | `codido_reserva`   | Código de la reserva devuelto por navasoft                   |
-| `invitados`        | Este campo ser un arreglo con la lista de invitados          |
+| `invitados`        | Este campo es un arreglo con la lista de invitados           |
 
 ### Descripcion de campos de invitados
 
@@ -137,7 +136,7 @@ Este endpoint se utiliza para agregar los invitados a la reserva de parrilla cre
 
 **Ejemplo de llamada:**
 ```
-GET /cuentas/guardar-pago
+GET /parrillas/reserva/R67890/invitados
 ```
 
 **Ejemplo de datos enviados**

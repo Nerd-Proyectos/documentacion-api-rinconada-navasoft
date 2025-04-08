@@ -35,7 +35,7 @@ GET /socios?estados=000,0001,0002&limit=200
     "tipo_doc": "DNI",
     "nro_doc": "12345678",
     "estado": "habilitado",
-    "nomcat": "Activo",
+    "nomcat": "Titular",
     "nacionalidad": "Peruana",
     "lugar_nacimiento": "Lima",
     "edo_civil": "Soltero",
@@ -77,7 +77,7 @@ Permite actualizar los datos personales de un socio usando su `codsoc`.
 | apellido_paterno  | string  | Sí        | Nuevo apellido paterno                |
 | apellido_materno  | string  | Sí        | Nuevo apellido materno                |
 | nombres           | string  | Sí        | Nuevos nombres                        |
-| tipo_doc          | string  | No        | Tipo de documento (DNI, Pasaporte)    |
+| tipo_doc          | string  | Sí        | Tipo de documento (DNI, Pasaporte)    |
 | nro_doc           | string  | No        | Número de documento                   |
 | estado            | string  | No        | Estado del socio                      |
 | nacionalidad      | string  | No        | Nacionalidad                          |
